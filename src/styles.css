@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@400;600;700;800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --dark: #1a2035; --dark2: #232b42; --dark3: #2d3654;
+  --white: #ffffff; --offwhite: #f8f9fa;
+  --accent: #e8533a; --accent-hover: #d44429;
+  --text-dark: #2d3436; --text-muted: #636e72; --border: #e0e0e0;
+  --font-main: 'Poppins', sans-serif; --font-display: 'Raleway', sans-serif;
+  --shadow: 0 4px 20px rgba(0,0,0,0.08); --shadow-lg: 0 8px 40px rgba(0,0,0,0.15);
+
+  /* Light mode page colors */
+  --bg-page: #ffffff;
+  --bg-card: #f8f9fa;
+  --text-primary: #2d3436;
+  --text-secondary: #636e72;
+  --border-color: #e0e0e0;
+  --card-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* ── Dark Mode ────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg-page: #111827;
+  --bg-card: #1f2937;
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --border-color: #374151;
+  --card-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  --offwhite: #1f2937;
+  --white: #f3f4f6;
+  --text-dark: #f3f4f6;
+  --text-muted: #9ca3af;
+  --border: #374151;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-main); color: var(--text-primary); background: var(--bg-page); overflow-x: hidden; line-height: 1.6; transition: background 0.3s, color 0.3s; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-card); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+.section-header { text-align: center; margin-bottom: 3rem; }
+.section-header h2 { font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.3rem; }
+.section-header p { font-size: 0.9rem; color: var(--text-secondary); letter-spacing: 0.12em; text-transform: uppercase; }
+.section-divider { display: flex; align-items: center; justify-content: center; margin: 0.75rem auto 0; width: 180px; }
+.section-divider span:first-child, .section-divider span:last-child { flex: 1; height: 2px; background: #ccc; border-radius: 2px; }
+.section-divider span:nth-child(2) { width: 36px; height: 10px; background: var(--accent); border-radius: 10px; margin: 0 4px; }
+.btn-outline { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.7rem 1.8rem; border: 2px solid var(--white); border-radius: 30px; color: var(--white); background: transparent; font-family: var(--font-main); font-weight: 500; font-size: 0.9rem; cursor: pointer; transition: all 0.3s; text-decoration: none; }
+.btn-outline:hover { background: var(--white); color: var(--dark); }
+.btn-accent { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.7rem 1.8rem; border: none; border-radius: 30px; color: var(--white); background: var(--accent); font-family: var(--font-main); font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.3s; text-decoration: none; }
+.btn-accent:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,83,58,0.35); }
+.wave-top { width: 100%; overflow: hidden; line-height: 0; transform: rotate(180deg); }
+.wave-bottom { width: 100%; overflow: hidden; line-height: 0; }
+.wave-top svg, .wave-bottom svg { display: block; width: 100%; height: 80px; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+.fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+footer { background: var(--dark); color: rgba(255,255,255,0.6); text-align: center; padding: 1.5rem; font-size: 0.85rem; }
+footer span { color: var(--accent); }
+@media (max-width: 768px) { .section-header h2 { font-size: 1.8rem; } }
+@media (max-width: 1400px) {
+  .about-content { max-width: 100%; }
+  .resume-body { max-width: 100%; }
+  .contact-box { max-width: 100%; min-height: auto !important; }
+  .testimonial-cards { max-width: 100%; }
+}

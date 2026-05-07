@@ -1,0 +1,109 @@
+.resume-section { padding: 5rem clamp(1.5rem, 5vw, 5rem); background: var(--bg-card); }
+.resume-body { display: grid; grid-template-columns: 280px 1fr; max-width: 1000px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-lg); min-height: 420px; }
+.resume-sidebar { background: var(--dark); display: flex; flex-direction: column; padding: 1rem 0; }
+.resume-tab { display: flex; align-items: center; gap: 0.85rem; padding: 1rem 1.5rem; background: none; border: none; color: rgba(255,255,255,0.6); font-family: var(--font-main); font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 0.25s; text-align: left; border-left: 3px solid transparent; }
+.resume-tab:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+.resume-tab.active { color: var(--white); background: rgba(255,255,255,0.08); border-left-color: var(--accent); }
+.tab-icon { font-size: 1rem; } .tab-label { font-size: 0.88rem; }
+.resume-panel { background: var(--bg-page); padding: 2.5rem; }
+.panel-content { display: flex; flex-direction: column; gap: 1.75rem; }
+.timeline-item { display: flex; gap: 1rem; align-items: flex-start; }
+.timeline-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 4px; }
+.timeline-info { flex: 1; }
+.timeline-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.3rem; }
+.timeline-header h4 { font-size: 1rem; font-weight: 700; color: var(--accent); }
+.timeline-year { background: var(--accent); color: var(--white); font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 20px; }
+.timeline-info p { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.04em; }
+.skill-row { margin-bottom: 0.5rem; }
+.skill-label-row { display: flex; justify-content: space-between; font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.4rem; }
+.skill-bar { height: 8px; background: #e9ecef; border-radius: 6px; overflow: hidden; }
+.skill-fill { height: 100%; background: linear-gradient(90deg, var(--dark), var(--accent)); border-radius: 6px; transition: width 1s ease; }
+.proj-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.proj-tag { background: rgba(232,83,58,0.1); color: var(--accent); font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 4px; border: 1px solid rgba(232,83,58,0.2); }
+.interests-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; flex-direction: unset; }
+.interest-card { display: flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1rem; background: var(--bg-card); border-radius: 8px; font-size: 0.88rem; font-weight: 500; border: 1px solid var(--border); transition: all 0.2s; }
+.interest-card:hover { border-color: var(--accent); color: var(--accent); }
+.interest-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+@media (max-width: 768px) { .resume-section { padding: 4rem 1.5rem; } .resume-body { grid-template-columns: 1fr; } .resume-sidebar { flex-direction: row; flex-wrap: wrap; } .resume-tab { flex: 1; min-width: 80px; padding: 0.75rem 0.5rem; flex-direction: column; gap: 0.25rem; font-size: 0.7rem; border-left: none; border-bottom: 3px solid transparent; } .resume-tab.active { border-bottom-color: var(--accent); border-left-color: transparent; } .tab-label { font-size: 0.68rem; text-align: center; } .resume-panel { padding: 1.5rem; } }
+/* ── Achievements ── */
+.achievement-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1.2rem;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+  transition: all 0.3s;
+}
+.achievement-card:hover {
+  border-color: var(--accent);
+  transform: translateX(4px);
+  box-shadow: var(--card-shadow);
+}
+.achievement-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+.achievement-info { flex: 1; }
+.achievement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.3rem;
+  gap: 1rem;
+}
+.achievement-header h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.achievement-issuer {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+.cert-img-wrap {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  max-width: 300px;
+}
+.cert-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.cert-link {
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.cert-link:hover { text-decoration: underline; }
+
+/* ── Project GitHub ── */
+.proj-github-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.proj-github-link:hover { color: var(--accent); }
+.proj-github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+  padding: 0.3rem 0.8rem;
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+.proj-github-btn:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
